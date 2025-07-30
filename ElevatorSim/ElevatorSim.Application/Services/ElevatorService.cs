@@ -49,7 +49,7 @@ namespace ElevatorSim.Application.Services
         {
             Console.Clear();
             foreach (var elevator in _elevators)
-                elevator.Elevate();
+                elevator.Elevate(elevator.ElevetorType);
         }
     }
 }
