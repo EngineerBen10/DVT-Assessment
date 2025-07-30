@@ -1,4 +1,7 @@
-namespace Elevator.Domain.Entities
+
+using ElevatorSim.Domain.Enums;
+
+namespace ElevatorSim.Domain.Entities
 {
     public class Elevator
     {
@@ -6,7 +9,7 @@ namespace Elevator.Domain.Entities
         public int Id { get; }
         public int CurrentFloor { get; private set; }
 
-        publis PassengerCount { get; private set; } = 0;
+        public int PassengerCount { get; private set; } = 0;
         public Direction CurrentDirection { get; private set; } = Direction.Idle; //set elevator to stationary state
 
         public Queue<int> Targets { get; } = new(); // we elevator is supposed to stop
@@ -18,7 +21,7 @@ namespace Elevator.Domain.Entities
         public Elevator(int id, int currentFloor, int maxPassengers)
         {
             Id = id;
-            CurrentFlor = currentFloor;
+            CurrentFloor = currentFloor;
             MaxPassengers = maxPassengers;
         }
 

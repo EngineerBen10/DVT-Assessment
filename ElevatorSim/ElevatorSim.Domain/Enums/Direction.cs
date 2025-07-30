@@ -1,4 +1,4 @@
-namespace Elevator.Domain.Enums
+namespace ElevatorSim.Domain.Enums
 {
     public enum Direction
     {

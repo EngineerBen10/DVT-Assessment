@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Elevator.Domain.Entities
+namespace ElevatorSim.Domain.Entities
 {
     public class Building
     {
