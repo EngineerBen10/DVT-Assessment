@@ -17,7 +17,7 @@ namespace ElevatorSim.Domain.Entities
 
         public bool IsMoving => Targets.Count > 0;
 
-     
+
         public Elevator(int id, int currentFloor, int maxPassengers)
         {
             Id = id;
@@ -52,7 +52,7 @@ namespace ElevatorSim.Domain.Entities
         }
 
         // tracking movement
-        public void Elevate( ElevetorType elevetorType)
+        public void Elevate(ElevetorType elevetorType)
         {
 
             switch (elevetorType)
@@ -62,14 +62,14 @@ namespace ElevatorSim.Domain.Entities
                     break;
                 default:
                     break;
-                
+
             }
         }
 
 
         public void PassangerElevator()
         {
-             if (Targets.Count == 0)
+            if (Targets.Count == 0)
             {
                 CurrentDirection = Direction.Idle;
                 return;
@@ -97,7 +97,7 @@ namespace ElevatorSim.Domain.Entities
             }
 
         }
-    
+
         public string ElevatorStatus()
         {
             var isMoving = IsMoving ? "Yes" : "No";
