@@ -7,8 +7,8 @@ namespace ElevatorSim.Application.Interfaces
 {
     public interface IElevator
     {
-       public void Move();
-       public void ElevatorStatus();
+        void Move();
+        void ElevatorStatus();
         
     }
 }
