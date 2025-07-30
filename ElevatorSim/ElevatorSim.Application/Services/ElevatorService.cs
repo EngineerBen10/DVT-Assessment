@@ -23,6 +23,23 @@ namespace ElevatorSim.Application.Services
                 Console.WriteLine(elevator.ElevatorStatus());
         }
 
+        public void GetElevatorSpaceAvailebility(Building building)
+        {
+            //check space availability on the elevators to take passengers
+
+            var passengers = _elevators
+            .Where(e => e.TakePassangers(building.PassengerCount))
+            .OrderBy(e => Math.Abs(e.CurrentFloor - building.Floor)) // checking the closet elevator to take you
+            .ThenBy(e => e.IsMoving ? 1 : 0)
+            .ToList();
+
+            if (!passengers.Any())
+            {
+                Console.WriteLine("Sorry all elevators are in full capacity.");
+                return;
+            } 
+        }
+
         public void Move() // elevator movement
         {
             foreach (var elevator in _elevators)

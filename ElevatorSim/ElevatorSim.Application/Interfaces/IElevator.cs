@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ElevatorSim.Domain.Entities;
 
 namespace ElevatorSim.Application.Interfaces
 {
@@ -9,6 +10,8 @@ namespace ElevatorSim.Application.Interfaces
     {
         void Move();
         void ElevatorStatus();
+
+        void GetElevatorSpaceAvailebility(Building building);
         
     }
 }

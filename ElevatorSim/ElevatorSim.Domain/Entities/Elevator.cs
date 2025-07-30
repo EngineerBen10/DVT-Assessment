@@ -41,6 +41,10 @@ namespace ElevatorSim.Domain.Entities
         }
 
 
+        public bool TakePassangers(int awaitintPassengers)
+        {
+            return PassengerCount + awaitintPassengers <= MaxPassengers;
+        }
 
         // tracking movement
         public void Elevate()
@@ -48,7 +52,7 @@ namespace ElevatorSim.Domain.Entities
 
             if (Targets.Count == 0)
             {
-                CurrentDirection  = Direction.Idle;
+                CurrentDirection = Direction.Idle;
                 return;
             }
 
