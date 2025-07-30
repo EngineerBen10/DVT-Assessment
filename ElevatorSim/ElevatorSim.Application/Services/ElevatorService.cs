@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 using ElevatorSim.Application.Interfaces;
@@ -37,7 +38,11 @@ namespace ElevatorSim.Application.Services
             {
                 Console.WriteLine("Sorry all elevators are in full capacity.");
                 return;
-            } 
+            }
+
+            var Select = passengers.First();
+            Select.AddTarget(building.Floor); // add the floor if not in the queue
+            Select.AddPassagers(building.PassengerCount); // add passanger count 
         }
 
         public void Move() // elevator movement
