@@ -5,7 +5,7 @@ namespace ElevatorSim;
 
 class Program
 {
-    static void Main(string[] args)
+    static  async Task Main(string[] args)
     {
 
 
@@ -13,9 +13,10 @@ class Program
 
         var inputElevetors = Console.ReadLine();
         Console.WriteLine("Enter The Number Of Maximum Passangers: \n");
+       
         var InputPassengers = Console.ReadLine();
 
-        if (!int.TryParse(inputElevetors, out int elevetors) || !int.TryParse(inputElevetors, out int Passangers))
+        if (!int.TryParse(inputElevetors, out int elevetors) || !int.TryParse(InputPassengers, out int Passangers))
         {
             Console.WriteLine("Invalid number of elevators or passangers.");
             return;
@@ -23,6 +24,6 @@ class Program
 
         var elevator = new ElevatorController(elevetors, Passangers);
 
-        elevator.Proccess();
+        await elevator.Proccess();
     }
 }

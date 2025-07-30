@@ -82,7 +82,7 @@ namespace ElevatorSim.Domain.Entities
         public string ElevatorStatus()
         {
             return $"Elevator {Id}: Floor {CurrentFloor}, Dir: {CurrentDirection}, " +
-        $"Moving: {IsMoving}, Passengers: {PassengerCount}/{MaxPassengers}, Targets: [{string.Join(",", Targets)}]";
+            $"Moving: {IsMoving}, Passengers: {PassengerCount}/{MaxPassengers}, Targets: [{string.Join(",", Targets)}]";
         }
 
     }

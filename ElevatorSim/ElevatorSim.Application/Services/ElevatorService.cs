@@ -47,6 +47,7 @@ namespace ElevatorSim.Application.Services
 
         public void Move() // elevator movement
         {
+            Console.Clear();
             foreach (var elevator in _elevators)
                 elevator.Elevate();
         }
