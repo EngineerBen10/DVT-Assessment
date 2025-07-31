@@ -1,0 +1,9 @@
+ElevatorSim/
+│   ├── ElevatorSim/           # Presentation Layer (Elevator Simulation UI)
+│   ├── ElevatorSim.Application/   # Application Layer (Services,Interfaces Elevator Simulation UI)
+│   ├── ElevatorSim.Domain/        # Domain Layer (Entities Elevator Simulation)
+│   ├── ElevatorSim.UnitTest/. # elevator functionality tests Elevator Simulation
+
+Target FrameWork
+---------------------
+.NET 8
