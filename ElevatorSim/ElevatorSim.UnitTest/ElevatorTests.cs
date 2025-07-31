@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ElevatorSim.Domain.Entities;
+using ElevatorSim.Domain.Enums;
 using Xunit;
 
 namespace ElevatorSim.UnitTest
@@ -44,7 +45,23 @@ namespace ElevatorSim.UnitTest
 
             var canTake = elevator.TakePassangers(5);
             Assert.True(canTake);
-            
+
+        }
+
+        [Fact]
+
+        public void Elevator_Elevate_Test()
+        {
+            var elevator = new Elevator(id: 1, currentFloor: 3, maxPassengers: 5);
+
+            elevator.AddPassagers(5);
+            elevator.AddTarget(1);
+
+            Assert.Equal(elevator.PassengerCount, elevator.MaxPassengers);
+            elevator.Elevate(ElevetorType.Passenger);
+            Assert.Equal(2, elevator.CurrentFloor);
+            Assert.Equal(Direction.Down, elevator.CurrentDirection);
+
         }
     }
 }
